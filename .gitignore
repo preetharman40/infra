@@ -1,0 +1,47 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+*.pyc
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+
+.env
+
+# databse
+.db
+local_data/
+
+
+# testing files
+todo_ui_test.py
+
+# logs
+*.log
+
+
+aws/
+
+#TERRAFORM
+
+# 1. Local tool folder (The binaries)
+.terraform/
+
+# 2. State files (The sensitive 'map')
+*.tfstate
+*.tfstate.*
+
+# 3. Crash logs
+*.log
+
+# 4. Variable files that might contain secrets
+*.tfvars
+*.tfvars.json
+
+# 5. Personal environment variables
+.env
