@@ -1,3 +1,17 @@
+
+terraform {
+  backend "s3" {
+    bucket         = "terraform-state-cyber"
+    key            = "dev/terraform.tfstate" # This is the "path" inside the bucket
+    region         = "us-west-1"             # Use your AWS region
+    dynamodb_table = "terraform-state-locking"
+    encrypt        = true                    # Keeps your state encrypted in the vault
+  }
+}
+
+
+
+
 # 1. Tell Terraform we want to use AWS
 provider "aws" {
   region = "us-west-1" 
