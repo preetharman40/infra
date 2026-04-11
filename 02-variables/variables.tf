@@ -15,3 +15,4 @@ variable "db_password" {
   type        = string
   sensitive   = true # This tells Terraform to hide the value in the logs!
 }
+}

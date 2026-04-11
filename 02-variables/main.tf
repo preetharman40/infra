@@ -10,8 +10,6 @@ terraform {
 }
 
 
-
-
 # 1. Tell Terraform we want to use AWS
 provider "aws" {
   region = "us-west-1" 
