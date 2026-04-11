@@ -23,6 +23,6 @@ resource "aws_instance" "my_server" {
   instance_type = var.instance_type             # Using the variable
 
   tags = {
-    Name = var.server_name # Using the variable!
+    Name = "Server-${terraform.workspace}" # Using the variable!
   }
 }
