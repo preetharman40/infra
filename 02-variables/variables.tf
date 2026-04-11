@@ -9,3 +9,9 @@ variable "instance_type" {
   type        = string
   default     = "t3.micro"
 }
+
+variable "db_password" {
+  description = "The secret password for our database"
+  type        = string
+  sensitive   = true # This tells Terraform to hide the value in the logs!
+}

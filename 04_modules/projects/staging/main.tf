@@ -2,7 +2,7 @@
 terraform {
   backend "s3" {
     bucket         = "terraform-state-cyber"
-    key            = "staging/terraform.tfstate" # Separate path for marketing!
+    key            = "staging/terraform.tfstate" 
     region         = "us-west-1"
     dynamodb_table = "terraform-state-locking"
   }
@@ -17,7 +17,7 @@ provider "aws" {
 
 module "staging_server" {
   source        = "../../modules/web_server"
-  server_name   = "Staging-web-Server"
+  server_name   = "Phoenix-App-${terraform.workspace}"
   instance_type = "t3.micro"
   ami_id        = "ami-0507f5acd9ba8e6b7"
 }
