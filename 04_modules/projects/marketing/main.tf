@@ -20,5 +20,6 @@ module "marketing_server" {
   server_name   = "marketing_server"
   instance_type = "t3.micro"
   ami_id        = "ami-0507f5acd9ba8e6b7"
+  database_API_KEY = var.database_API_KEY
 }
 
