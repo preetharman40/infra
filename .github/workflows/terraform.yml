@@ -23,13 +23,13 @@ jobs:
 
       - name: Terraform init
         run: terraform init
-        working-directory: ~/devops/infrastructure/04_modules/projects/marketing
+        working-directory: ./04_modules/projects/marketing
 
       - name: Terraform plan
         run: terraform plan
-        working-directory: ~/devops/infrastructure/04_modules/projects/marketing
+        working-directory: ./04_modules/projects/marketing
 
       - name: Terraform Apply
         if: github.ref == 'ref/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve
-        working-directory: ~/devops/infrastructure/04_modules/projects/marketing
+        working-directory: ./04_modules/projects/marketing
