@@ -16,8 +16,11 @@ provider "aws" {
 # 3. The "Lego Brick" (Calling the Module)
 
 module "phoenix_server"{
+# we want 3 servers in staging, but only 1 in prod
+
+  count         = terraform.workspace == "staging" ? 3 : 1
   source        = "../modules/web_server"
-  server_name   = "Phoenix-App-${terraform.workspace}"
+  server_name   = "Phoenix-App-${terraform.workspace}-${count.index}"
   instance_type = "t3.micro"
   ami_id        = "ami-0507f5acd9ba8e6b7"
   database_API_KEY = var.database_API_KEY
