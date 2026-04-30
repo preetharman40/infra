@@ -2,7 +2,7 @@
 terraform {
   backend "s3" {
     bucket         = "terraform-state-cyber"
-    key            = "${terraform.workspace}/terraform.tfstate" 
+    key            = "marketing/terraform.tfstate" 
     region         = "us-west-1"
     dynamodb_table = "terraform-state-locking"
   }
@@ -17,8 +17,9 @@ provider "aws" {
 
 module "marketing_server" {
   source        = "../../modules/web_server"
-  server_name   = "Phoenix-App-${terraform.workspace}"
+  server_name   = "marketing_server"
   instance_type = "t3.micro"
   ami_id        = "ami-0507f5acd9ba8e6b7"
+  database_API_KEY = var.database_API_KEY
 }
 
